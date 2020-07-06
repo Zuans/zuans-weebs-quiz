@@ -9,7 +9,7 @@
       </div>
       <div v-if="submit">
         <h3 class="mt-5 text-white">Question ?</h3>
-        <p class="text-white">{{ currentQuestion.question }}</p>
+        <p v-html="currentQuestion.question" class="text-white">waawdaw</p>
         <hr class="my-4" />
         <b-list-group>
           <b-list-group-item
@@ -17,7 +17,8 @@
             @click="selectAnswer(index)"
             :key="index"
             :class="answerClass(index)"
-          >{{ answer }}</b-list-group-item>
+            v-html="answer"
+          ></b-list-group-item>
         </b-list-group>
         <b-button
           variant="primary"
